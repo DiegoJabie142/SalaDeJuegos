@@ -1,0 +1,22 @@
+<app-header title="Hangman-game" [back]="true" [whereToBack]="'main/home'"/>
+<div class="d-flex-center" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); height: 93vh;">
+    <div class="widht-100">
+        <div class="d-flex-center">
+            <app-hangman-display (gameFinished)="onGameFinished()" (gameFinishedScore)="onGameFinishedScore($event)" [guesses]="guesses" [question]="question"></app-hangman-display>
+        </div>
+        <ng-container *ngIf="!restartGameBtnShown else restartGameBtn">
+          <app-hangman-question [guesses]="guesses" [question]="question"></app-hangman-question>
+          <app-hangman-keyboard (keyPressed)="guess($event)" [question]="question"></app-hangman-keyboard>
+        </ng-container>
+      </div>
+      <ng-template #restartGameBtn class="question">
+        <div class="widht-100 d-flex-center">
+            <div class="question" style="color:  white; font-size: 30px;">
+                La palaba era: {{question}}
+            </div>
+        </div>
+        <button class="btn" (click)="reset()" style="font-size: 20px;">
+          {{'Reiniciar Juego'}}
+        </button>
+      </ng-template>
+</div>

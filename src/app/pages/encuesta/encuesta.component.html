@@ -1,0 +1,92 @@
+<app-header [back]="true" [whereToBack]="'main/home'" [title]="'COMPLETAR ENCUESTA'"></app-header>
+<div class="bg">
+    <div style="padding-top: 50px;">
+        <div class="encuesta-container">
+            <h2>Encuesta</h2>
+            <form [formGroup]="encuestaForm" (ngSubmit)="submit()">
+                <!-- Nombre y apellido -->
+                <div class="form-group">
+                    <label for="nombre">Nombre y apellido:</label>
+                    <input id="nombre" formControlName="nombre" type="text" placeholder="Ingrese su nombre completo" (input)="validarSoloLetras($event)"/>
+                    <div *ngIf="encuestaForm.get('nombre').touched && encuestaForm.get('nombre').invalid" class="error">
+                        Nombre es requerido.
+                    </div>
+                </div>
+
+                <!-- Edad -->
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input id="edad" formControlName="edad" type="number" placeholder="Ingrese su edad" />
+                    <div *ngIf="encuestaForm.get('edad').touched && encuestaForm.get('edad').invalid" class="error">
+                        Edad debe estar entre 18 y 99 años.
+                    </div>
+                </div>
+
+                <!-- Número de teléfono -->
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono:</label>
+                    <input id="telefono" formControlName="telefono" type="text" placeholder="Ingrese su número de teléfono" (input)="validarSoloNumeros($event)"/>
+                    <div *ngIf="encuestaForm.get('telefono').touched && encuestaForm.get('telefono').invalid" class="error">
+                        El número debe ser válido y contener solo números (máximo 10 dígitos).
+                    </div>
+                </div>
+
+                <!-- Pregunta 1: ¿Qué opina de los juegos? -->
+                <div class="form-group">
+                    <label for="comentario">¿Qué opina de los juegos?</label>
+                    <input 
+                        id="comentario" 
+                        formControlName="comentario" 
+                        type="text" 
+                        placeholder="Escriba su opinión"
+                    />
+                    <div *ngIf="encuestaForm.get('comentario').touched && encuestaForm.get('comentario').invalid" class="error">
+                        Esta pregunta es obligatoria.
+                    </div>
+                </div>
+
+                <!-- Pregunta 2: ¿Recomendarías jugarlos a alguien más? -->
+                <div class="form-group">
+                    <label>¿Recomendarías jugarlos a alguien más?</label>
+                    <div>
+                        <input 
+                            type="radio" 
+                            formControlName="recomendacion" 
+                            value="Sí" 
+                        /> Sí
+                        <input 
+                            type="radio" 
+                            formControlName="recomendacion" 
+                            value="No" 
+                        /> No
+                    </div>
+                    <div *ngIf="encuestaForm.get('recomendacion').touched && encuestaForm.get('recomendacion').invalid" class="error">
+                        Esta pregunta es obligatoria.
+                    </div>
+                </div>
+
+                <!-- Pregunta 3: ¿Cuáles de los siguientes juegos te gustaron? -->
+                <div class="form-group">
+                    <label>¿Cuáles de los siguientes juegos te gustaron?</label>
+                    <div formArrayName="juegos">
+                      <div *ngFor="let juego of juegosList; let i = index">
+                        <input 
+                          type="checkbox" 
+                          [value]="juego" 
+                          (change)="onCheckboxChange($event, juego)" /> 
+                        {{ juego }}
+                      </div>
+                    </div>
+                    <div *ngIf="encuestaForm.get('juegos').touched && encuestaForm.get('juegos').invalid" class="error">
+                      Esta pregunta es obligatoria.
+                    </div>
+                  </div>
+                  
+                  
+
+                <!-- Botón de envío -->
+                <button type="submit" [disabled]="encuestaForm.invalid">Enviar Encuesta</button>
+            </form>
+        </div>
+    </div>
+</div>

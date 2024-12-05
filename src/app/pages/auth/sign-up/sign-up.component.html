@@ -1,0 +1,51 @@
+<app-header title='REGISTRARSE' [routes]="[{ name: 'Quién soy?', url: '/quien-soy' }]" [back]="true" [whereToBack]="'/auth'"></app-header>
+<div class="body">
+    <div class="bg-goku">
+    </div>
+    <div class="d-flex-center widht-100">
+        <app-logo></app-logo>
+    </div>
+    
+    <div class="d-flex-center width-100">
+        <form (ngSubmit)="submit()" (keypress.enter)="submit()" class="auth-form">
+
+            <!--USUARIO-->
+            <div class="margin-input">
+                <app-custom-input label="Nombre" [control]="form.controls.name" type="name"></app-custom-input>
+            </div>
+            @if(form.controls.name.errors && form.controls.name.touched){
+                <ng-container class="validators-container">                  
+                        <div *ngIf="form.controls.name.errors?.['required']" class="validators">El nombre es requerido</div>
+                        <div *ngIf="!form.controls.name.errors?.['required']" class="validators">El nombre debe tener 5 o más carácteres</div>
+                 </ng-container>
+            }
+
+            <!--EMAIL-->
+            <div class="margin-input">
+                <app-custom-input label="Correo" [control]="form.controls.email" type="email"></app-custom-input>
+            </div>
+            @if(form.controls.email.errors && form.controls.email.touched){
+                <ng-container class="validators-container">                  
+                        <div *ngIf="form.controls.email.errors?.['required']" class="validators">El correo es requerido</div>
+                        <div *ngIf="form.controls.email.errors?.['email']" class="validators">Ingrese un formato correcto</div>
+                 </ng-container>
+            }
+
+            <!--PASSWORD-->
+            <div class="margin-input">
+                <app-custom-input label="Contraseña" [control]="form.controls.password" type="password" (keypress.enter)="submit()"></app-custom-input>
+            </div>
+            @if(form.controls.password.errors && form.controls.password.touched){
+                <ng-container class="validators-container">                  
+                        <div *ngIf="form.controls.password.errors?.['required']" class="validators">La contraseña es requerida</div>
+                        <div *ngIf="form.controls.password.errors?.['email']" class="validators">Debe tener 6 carácteres o más</div>
+                 </ng-container>
+            }
+
+            <div class="d-flex-center widht-100">
+                <button mat-flat-button color="warn" class="button-login" [disabled]="form.invalid">REGISTRARSE</button>
+            </div>
+        </form>
+        
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.body{
+    background-image: url(../../../../img/background-game.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    height: 800px;
+    margin-top: 20px;
+
+}
+
+.d-flex-space-between{
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.margin-input{
+    margin-top: 40px;
+}
+
+.button-login{
+    padding: 22px;
+    margin-top: 40px;
+}
+
+.validators{
+    font-size: 15px;
+    text-align: center;
+    color: red;
+}

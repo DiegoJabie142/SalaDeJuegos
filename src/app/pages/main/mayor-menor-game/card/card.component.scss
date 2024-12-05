@@ -1,0 +1,101 @@
+.card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px; /* Añadir padding para mayor separación */
+  }
+  
+  .card {
+    width: 200px;
+    height: 300px;
+    border: 2px solid #ddd; /* Borde más definido */
+    border-radius: 12px; /* Bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* Fondo blanco */
+    font-size: 1rem; /* Usar unidad relativa */
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    color: #333; /* Color oscuro para mejor contraste */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transiciones más suaves */
+    
+    /* Hacer que la carta sea responsiva */
+    @media (max-width: 768px) {
+      width: 90px;
+      height: 135px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Ampliación al pasar el cursor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hacer hover */
+    background-color: #f9f9f9; /* Cambio de color al pasar el cursor */
+  }
+  
+  .card.red {
+    color: #e63946; /* Rojo vibrante para cartas rojas */
+  }
+  
+  .card-value {
+    font-size: 1.1rem; /* Ajustar tamaño de texto */
+    margin: 4px; /* Espaciado pequeño */
+  }
+  
+  .card-value.top {
+    align-self: flex-start;
+    margin-top: 8px; /* Espacio extra en la parte superior */
+  }
+  
+  .card-value.bottom {
+    align-self: flex-end;
+    margin-bottom: 8px; /* Espacio extra en la parte inferior */
+  }
+  
+  .card-suit {
+    font-size: 2rem; /* Tamaño grande para el símbolo del palo */
+    margin: 5px 0; /* Espaciado vertical */
+  }
+  
+  .card.hidden {
+    background-color: #ccc; /* Fondo gris claro para cartas ocultas */
+    border: 2px solid #aaa; /* Borde gris para cartas ocultas */
+    color: transparent; /* Texto oculto */
+  }
+  
+  .card-back-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px; /* Bordes redondeados aplicados al contenedor */
+    overflow: hidden; /* Asegura que el contenido no se salga del borde redondeado */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Fondo degradado */
+  }
+  
+  .card-back {
+    font-size: 330px; /* Tamaño del ícono */
+    color: white; /* Color blanco para el ícono */
+    font-weight: bold; /* Hacer el ícono más prominente */
+    padding: 10px; /* Espaciado alrededor del ícono, si es necesario */
+  }
+  
+  /* Efectos adicionales para mejorar la interactividad */
+  .card:active {
+    transform: scale(0.98); /* Reducir el tamaño cuando se haga clic */
+  }
+  
+  .card-value,
+  .card-suit {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .card:hover .card-value,
+  .card:hover .card-suit {
+    transform: translateY(-5px); /* Mover los valores hacia arriba */
+  }
+  

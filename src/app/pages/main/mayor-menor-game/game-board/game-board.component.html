@@ -1,0 +1,36 @@
+<div class="game-board">
+    <h2>¡Juego de Mayor o Menor!</h2>
+  
+    <!-- Puntaje y Vidas -->
+    <p>Puntaje: {{ score }}</p>
+    <div class="life-container">
+      <p>Vidas: 
+        <span *ngFor="let life of [].constructor(lives)" 
+              class="life" 
+              [ngClass]="{ 'lost': life > lives - 1 }">
+          ❤️
+        </span>
+      </p>
+    </div>
+  
+    <!-- Cartas -->
+    <div class="card-container">
+      <app-card [value]="currentCard.value" [suit]="currentCard.suit" [hidden]="true"></app-card>
+      <app-card [value]="currentCard.value" [suit]="currentCard.suit"></app-card>
+    </div>
+  
+    <!-- Botones -->
+    <div *ngIf="!gameOver; else gameOverTemplate" class="game-buttons">
+      <button (click)="checkGuess('higher')">Mayor</button>
+      <button (click)="checkGuess('lower')">Menor</button>
+      <button (click)="checkGuess('equal')">Igual</button>
+    </div>
+    
+  
+    <!-- Juego terminado -->
+    <ng-template #gameOverTemplate>
+      <p class="game-over" style="margin-bottom: 30px;">¡Juego Terminado! Puntaje final: {{ score }}</p>
+      <button class="reset-button" (click)="resetGame()">Reiniciar Juego</button>
+    </ng-template>
+  </div>
+  

@@ -1,0 +1,30 @@
+<div class="game-board" *ngIf="!gameOver; else gameOverTemplate">
+    <h2>¡Adivina la Bandera!</h2>
+    <p>Puntaje: {{ score }}</p>
+    
+    <!-- Mostrar las vidas como corazones -->
+    <p>Vidas: 
+      <span *ngFor="let heart of [].constructor(lives)" class="life" [ngClass]="{ 'lost': heart > lives - 1 }">
+        ❤️
+      </span>
+    </p>
+    
+    <!-- Asegúrate de que currentCountry y currentCountry.flags estén definidos antes de mostrar la bandera -->
+    <div class="flag-container" *ngIf="currentCountry?.flags">
+      <img [src]="currentCountry.flags.png" alt="Flag" />
+    </div>
+  
+    <div class="options">
+      <div *ngFor="let option of options" class="option" (click)="checkAnswer(option)">
+        <p>{{ option.name.common }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #gameOverTemplate>
+    <div class="game-over-template">
+      <p class="game-over-message">¡Juego Terminado! Puntaje final: {{ score }}</p>
+      <button (click)="resetGame()">Reiniciar Juego</button>
+    </div>
+  </ng-template>
+  

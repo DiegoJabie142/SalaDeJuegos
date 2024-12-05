@@ -1,0 +1,144 @@
+.bg{
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    height: 120vh;
+}
+
+/* Contenedor de la encuesta */
+.encuesta-container {
+    background-color: #2c3e50; /* Fondo oscuro */
+    color: #ecf0f1; /* Texto claro */
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin:auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .encuesta-container h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #3498db; /* Color azul brillante */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Estilo general para los grupos de formulario */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ecf0f1; /* Texto claro */
+    display: block;
+    margin-top: 30px;
+  }
+  
+  /* Estilo para los inputs */
+  input[type="text"],
+  input[type="number"],
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #34495e; /* Borde gris oscuro */
+    border-radius: 8px;
+    background-color: #34495e; /* Fondo oscuro para inputs */
+    color: #ecf0f1; /* Texto claro */
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    top: 20px;
+  }
+  
+  /* Efecto al hacer hover en los inputs */
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="radio"]:focus,
+  input[type="checkbox"]:focus {
+    outline: none;
+    border-color: #3498db; /* Borde azul brillante al hacer foco */
+    background-color: #1abc9c; /* Fondo verde claro al hacer foco */
+  }
+  
+  /* Estilo para el texto de error */
+  .error {
+    color: #e74c3c; /* Rojo brillante para errores */
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  /* Estilo para las preguntas */
+  .preguntas {
+    margin-top: 20px;
+  }
+  
+  .preguntas label {
+    font-size: 1.1em;
+    color: #ecf0f1; /* Texto claro */
+    display: block;
+  }
+  
+  /* Estilos para los radio buttons */
+  input[type="radio"] {
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilos para los checkboxes */
+  input[type="checkbox"] {
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Botón de envío */
+  button {
+    width: 100%;
+    padding: 14px;
+    background-color: #3498db; /* Azul brillante */
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #1abc9c; /* Cambio de color en hover */
+  }
+  
+  button:disabled {
+    background-color: #7f8c8d; /* Color gris cuando está deshabilitado */
+    cursor: not-allowed;
+  }
+  
+  /* Estilo para el contenedor de la encuesta y los campos */
+  .form-group input {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 600px) {
+    .encuesta-container {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  
+    input[type="text"],
+    input[type="number"],
+    input[type="radio"],
+    input[type="checkbox"] {
+      padding: 10px;
+      font-size: 0.9em;
+    }
+  }
+  

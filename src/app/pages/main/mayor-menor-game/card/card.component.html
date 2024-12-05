@@ -1,0 +1,17 @@
+<div class="card-container">
+    <div 
+    class="card" 
+    [class.hidden]="hidden" 
+    [class.red]="suit === '♥' || suit === '♦'">
+    <ng-container *ngIf="!hidden; else backOfCard">
+        <div class="card-value top">{{ value }}</div>
+        <div class="card-suit">{{ suit }}</div>
+        <div class="card-value bottom">{{ value }}</div>
+    </ng-container>
+    <ng-template #backOfCard>
+        <div class="card-back-container">
+          <div class="card-back">🂠</div>
+        </div>
+      </ng-template>
+    </div>
+</div>

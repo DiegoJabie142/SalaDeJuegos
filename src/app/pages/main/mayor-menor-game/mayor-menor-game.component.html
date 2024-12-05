@@ -1,0 +1,4 @@
+<app-header [back]="true" [whereToBack]="'main/home'" [title]="'MAYOR MENOR'"></app-header>
+<div class="bg">
+    <app-game-board (gameFinishedScore)="onGameFinishedScore($event)"></app-game-board>
+</div>

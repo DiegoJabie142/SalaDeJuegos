@@ -1,0 +1,33 @@
+<app-header [back]="true" [whereToBack]="'main/home'" [title]="'Quién soy?'"></app-header>
+<div class="bg">
+    <div class="d-flex">
+      <!-- Tarjeta de GitHub -->
+      <div class="card" *ngIf="userData">
+        <img class="card-img-top" [src]="userData.avatar_url" alt="Profile image">
+        <div class="card-body">
+          <h5 class="card-title">{{ userData.name }}</h5>
+          <p class="card-text">{{ userData.bio }}</p>
+          <a [href]="userData.html_url" class="btn btn-primary" target="_blank">Go to Profile</a>
+        </div>
+      </div>
+  
+      <!-- Tarjeta de información personal -->
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Sobre mí</h1>
+          <p class="card-text">Mi nombre es <strong>Diego</strong>, tengo 24 años y actualmente estoy estudiando programación en la UTN. Me encuentro día a día proponiéndome nuevos desafíos para poder cumplir mi meta de algún día volverme desarrollador full stack.</p>
+          <p class="card-text">
+            <strong>Juego elegido: </strong>Wordle<br>
+            <br/>
+            Wordle es un juego de palabras en el que debes adivinar una palabra secreta de 5 letras en 6 intentos.<br/><br/> Tras cada intento, el juego te da pistas:
+            <br/>Verde: La letra está en la palabra y en la posición correcta.
+            <br/>Amarillo: La letra está en la palabra, pero en otra posición.
+            <br/>Gris: La letra no está en la palabra.
+            <br/>
+            <br/>Tu objetivo es descubrir la palabra secreta usando estas pistas. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

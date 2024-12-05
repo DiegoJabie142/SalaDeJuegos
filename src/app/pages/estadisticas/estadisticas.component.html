@@ -1,0 +1,57 @@
+<app-header [back]="true" [whereToBack]="'main/home'" [title]="'ESTADISTICAS'"></app-header>
+<div class="bg" style="display: flex; justify-content: center;">
+    <div style="margin-top: 100px;">
+        <div *ngIf="loading" class="loading">
+            Cargando estadísticas...
+        </div>
+        
+        <div *ngIf="!loading && partidas.length === 0" class="no-partidas">
+            Aún no hay partidas registradas para este juego.
+        </div>
+        
+        <div *ngIf="!loading && partidas.length > 0">
+            <h2>Estadísticas de Partidas: 
+                @if(juegoSeleccionado=='partidas-adivina-la-bandera'){Adivina la bandera} 
+                @if(juegoSeleccionado=='partidas-wordle'){Wordle} 
+                @if(juegoSeleccionado=='partidas-mayor-menor'){Mayor Menor} 
+                @if(juegoSeleccionado=='partidas-ahorcado'){Ahorcado} 
+            </h2>
+        
+            <div class="juegos-selector">
+            <label for="juegos">Selecciona un juego: </label>
+            <select id="juegos" [(ngModel)]="juegoSeleccionado" (change)="onJuegoSeleccionado(juegoSeleccionado)">
+                <option *ngFor="let juego of juegos" [value]="juego">
+                    @if(juego=='partidas-adivina-la-bandera'){Adivina la bandera} 
+                    @if(juego=='partidas-wordle'){Wordle} 
+                    @if(juego=='partidas-mayor-menor'){Mayor Menor} 
+                    @if(juego=='partidas-ahorcado'){Ahorcado} 
+                    </option>
+            </select>
+            </div>
+        
+            <table class="tabla-estadisticas" style="width: 800px; border-radius: 20px;">
+            <thead>
+                <tr>
+                <th>Fecha</th>
+                <th>Juego</th>
+                <th>Puntaje</th>
+                <th>Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let partida of partidas">
+                <td>{{ partida.fecha | date: 'short' }}</td>
+                <td>
+                    @if(juegoSeleccionado=='partidas-adivina-la-bandera'){Adivina la bandera} 
+                    @if(juegoSeleccionado=='partidas-wordle'){Wordle} 
+                    @if(juegoSeleccionado=='partidas-mayor-menor'){Mayor Menor} 
+                    @if(juegoSeleccionado=='partidas-ahorcado'){Ahorcado} 
+                </td>
+                <td>{{ partida.puntaje }}</td>
+                <td>{{ partida.usuario }}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>     
+    </div>
+</div>

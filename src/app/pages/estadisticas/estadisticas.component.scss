@@ -1,0 +1,123 @@
+.bg{
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    height: 93vh;
+}
+
+/* Estilo general para el contenedor */
+div {
+    font-family: 'Arial', sans-serif;
+    color: #fff;  /* Texto blanco para contraste con fondo oscuro */
+  }
+  
+  /* Estilo para el texto de carga */
+  .loading {
+    text-align: center;
+    font-size: 1.8em;
+    color: #ff72b3;  /* Color rosado suave */
+    padding: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilo cuando no hay partidas */
+  .no-partidas {
+    text-align: center;
+    font-size: 1.5em;
+    color: #ff5c8d;  /* Color rosado más fuerte */
+    padding: 30px;
+    background-color: rgba(255, 94, 133, 0.1);  /* Fondo sutil rosado */
+  }
+  
+  /* Título de las estadísticas */
+  h2 {
+    text-align: center;
+    font-size: 2.4em;
+    color: #b0e2ff;  /* Color azul claro elegante */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilos del selector de juegos */
+  .juegos-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .juegos-selector label {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #d1d1d1;  /* Gris suave */
+  }
+  
+  .juegos-selector select {
+    color: #000000;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+  }
+  
+  .juegos-selector select:hover {
+    border-color: #ff72b3;  /* Bordes con un toque de color rosado al pasar */
+  }
+  
+  /* Estilo de la tabla */
+  .tabla-estadisticas {
+    width: 100%;
+    margin-top: 30px;
+    background-color: #1f1f1f;  /* Fondo oscuro de la tabla */
+  }
+  
+  .tabla-estadisticas th, .tabla-estadisticas td {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1.1em;
+  }
+  
+  /* Estilo de los encabezados de la tabla */
+  .tabla-estadisticas th {
+    background-color: #5c6bc0;  /* Color azul morado suave */
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Estilo para las filas impares y pares */
+  .tabla-estadisticas tr:nth-child(even) {
+    background-color: #2a3d66;  /* Azul más oscuro */
+  }
+  
+  .tabla-estadisticas tr:nth-child(odd) {
+    background-color: #374a8e;  /* Azul intermedio */
+  }
+  
+  /* Efecto hover para las filas */
+  .tabla-estadisticas tr:hover {
+    background-color: #ff72b3;  /* Rosado suave para resaltar fila */
+    color: #fff;  /* Mantener texto blanco */
+    cursor: pointer;
+  }
+  
+  /* Estilo de las celdas */
+  .tabla-estadisticas td {
+    color: #e8e8e8;  /* Gris claro */
+    font-size: 1.1em;
+  }
+  
+
+  /* Estilo del contenedor de la tabla */
+  .table-container {
+    margin: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .table-container:hover {
+    transform: scale(1.02);  /* Efecto de agrandamiento suave al pasar el mouse */
+  }
+  

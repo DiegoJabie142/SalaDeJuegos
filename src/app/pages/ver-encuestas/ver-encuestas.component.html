@@ -1,0 +1,38 @@
+<app-header [back]="true" [whereToBack]="'main/home'" [title]="'VER ENCUESTAS'"></app-header>
+
+<div class="bg">
+    <div style="padding-top: 100px;">
+
+    <div class="encuestas-container" *ngIf="formattedEncuestas.length > 0">
+        <h2>Encuestas</h2>
+        <table>
+        <thead>
+            <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Comentario</th>
+            <th>Recomendación</th>
+            <th>Juegos que recomienda</th>
+            <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let encuesta of formattedEncuestas">
+            <td>{{ encuesta.resultado.nombre }}</td>
+            <td>{{ encuesta.resultado.edad }}</td>
+            <td>{{ encuesta.resultado.comentario }}</td>
+            <td>{{ encuesta.resultado.recomendacion }}</td>
+            <td>{{ encuesta.resultado.juegosFormatted }}</td>
+            <td>{{ encuesta.fecha | date: 'short' }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+  <!-- Mensaje si no hay encuestas -->
+    <div *ngIf="formattedEncuestas.length === 0">
+        <p>No hay encuestas disponibles.</p>
+    </div>
+          
+    </div>
+</div>

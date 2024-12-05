@@ -1,0 +1,17 @@
+<app-header title="CHAT" [back]="true" [whereToBack]="'main/home'"/>
+<div class="bg">
+    <div class="chat-container">
+        <div class="messages">
+        <div *ngFor="let message of messages" class="message">
+            <strong>{{ message.user }}:</strong>
+            <span>{{ message.message }}</span>
+            <small>{{ message.timestamp.toDate() | date:'short' }}</small> <!-- Mostrar la fecha del mensaje -->
+        </div>
+        </div>
+    
+        <div class="message-input">
+        <input [(ngModel)]="messageText" type="text" placeholder="Escribe tu mensaje..." />
+        <button (click)="sendMessage()">Enviar</button>
+        </div>
+    </div>
+</div>

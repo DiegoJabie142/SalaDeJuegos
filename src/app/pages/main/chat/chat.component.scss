@@ -1,0 +1,110 @@
+/* Estilo principal del contenedor del chat */
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f8fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    top: 100px;
+  }
+  
+  /* Área de los mensajes */
+  .messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo de cada mensaje */
+  .message {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Nombre del usuario en cada mensaje */
+  .message strong {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* Estilo del contenido del mensaje */
+  .message span {
+    display: block;
+    margin-top: 6px;
+  }
+  
+  /* Fecha/hora del mensaje */
+  .message small {
+    display: block;
+    margin-top: 8px;
+    color: #888;
+    font-size: 0.8em;
+  }
+  
+  /* Input para el nuevo mensaje */
+  .message-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Estilo del campo de texto */
+  .message-input input {
+    width: 80%;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+    outline: none;
+  }
+  
+  /* Estilo cuando el campo de texto está enfocado */
+  .message-input input:focus {
+    border-color: #007bff;
+    background-color: #fff;
+  }
+  
+  /* Estilo del botón de enviar */
+  .message-input button {
+    width: 15%;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Cambio de color al pasar el mouse por encima del botón */
+  .message-input button:hover {
+    background-color: #0056b3;
+  }
+
+  .bg{
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    height: 90vh;
+    padding-top: 30px;
+  }
+  

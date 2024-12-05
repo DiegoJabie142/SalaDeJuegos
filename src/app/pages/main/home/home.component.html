@@ -1,0 +1,36 @@
+<app-header title="HOME"/>
+
+<body>
+    <div style="width: 100%; display: flex; justify-content: center; margin-top: 90px;">
+        <h1 style="font-size: 32px;">SELECCIONA TU JUEGO</h1>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 80px;">
+        <div class="card bg-ahorcado" style="margin-left: 25px; margin-right: 25px;">
+            <div class="card-content">
+                <h2>Juega al ahorcado</h2>
+                <button class="start-button" (click)="redirectToHangman()">Empezar Juego</button>
+            </div>
+        </div>
+        <div class="card bg-mayor-menor" style="margin-left: 25px; margin-right: 25px;">
+            <div class="card-content">
+                <h2>Juega mayor menor</h2>
+
+                <button class="start-button" (click)="redirectToMayorMenor()">Empezar Juego</button>
+            </div>
+        </div>
+        <div class="card bg-adivina-la-bandera" style="margin-left: 25px; margin-right: 25px;">
+            <div class="card-content">
+                <h2>Adivina la bandera</h2>
+              
+                <button class="start-button" (click)="redirectToAdivinaLaBandera()">Empezar Juego</button>
+            </div>
+        </div>
+        <div class="card bg-wordle" style="margin-left: 25px; margin-right: 25px;">
+            <div class="card-content">
+                <h2>Juega al Wordle</h2>
+             
+                <button class="start-button" (click)="redirectToWordle()">Empezar Juego</button>
+            </div>
+        </div>
+    </div>
+</body>

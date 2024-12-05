@@ -1,0 +1,77 @@
+.header{
+    margin: 0px;
+    padding: 20px;
+}
+
+.title{
+    font-size: larger;
+    font-weight: 500;
+    color: white;
+}
+
+.margin-right{
+    margin-right: 20px;
+}
+
+.size{
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+}
+
+.styled-button {
+    background-color: transparent; /* Fondo transparente */
+    color: #ff6ec4; /* Color de texto */
+    border: 2px solid #ff6ec4; /* Borde color neón */
+    padding: 12px 24px; /* Tamaño cómodo del botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: 600; /* Peso de la fuente */
+    border-radius: 30px; /* Bordes redondeados */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 1.5px; /* Espaciado entre letras */
+    transition: all 0.3s ease; /* Transiciones suaves */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  }
+  
+  /* Efecto al pasar el ratón */
+  .styled-button:hover {
+    background-color: #ff6ec4; /* Fondo de color cuando se pasa el ratón */
+    color: white; /* Texto blanco */
+    border: 2px solid #ff6ec4; /* Mantener el borde color neón */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+  }
+  
+  /* Efecto de enfoque */
+  .styled-button:focus {
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: 0 0 10px rgba(255, 110, 196, 0.5); /* Efecto de sombra al hacer clic */
+  }
+  
+
+  .title {
+    font-family: 'Arial', sans-serif; /* Tipografía moderna */
+    font-weight: 700; /* Hacer que el texto sea más grueso */
+    font-size: 32px; /* Tamaño de la fuente */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    color: #ff6ec4; /* Color atractivo para el texto */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    position: relative; /* Para manejar la posición */
+    transition: all 0.3s ease; /* Transición suave para efectos */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar el texto */
+  }
+  
+  /* Efecto al pasar el ratón */
+  .title:hover {
+    color: #ff7878; /* Cambiar color al pasar el ratón */
+    transform: translateX(10px); /* Desplazar el texto ligeramente */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Sombra más prominente al pasar el ratón */
+    cursor: pointer;
+  }
+  
+  /* Asegurar que ambas etiquetas tengan el mismo estilo */
+  .title {
+    font-size: 32px; /* Tamaño de la fuente igual para ambas */
+    position: relative; 
+    left: 0; /* Restablecer cualquier desplazamiento si lo hubiera */
+  }
+  

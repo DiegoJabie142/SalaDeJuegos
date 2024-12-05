@@ -1,0 +1,11 @@
+<div class="keyboard">
+    <div class="keyboard-row" *ngFor="let row of [letters.slice(0, 10), letters.slice(10, 20), letters.slice(20)]">
+      <button *ngFor="let letter of row"
+              class="key"
+              [style.backgroundColor]="getLetterColor(letter)"
+              (click)="onLetterClick(letter)">
+        {{ letter.toUpperCase() }}
+      </button>
+    </div>
+  </div>
+  

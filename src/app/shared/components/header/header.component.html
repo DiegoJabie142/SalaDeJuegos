@@ -1,0 +1,30 @@
+<mat-toolbar class="header" color="primary" style="display: flex; justify-content: space-between;">
+      
+      @if(back){
+            <button class="margin-right" mat-button (click)="redirectToLogin()">
+                  <mat-icon fontIcon="arrow_back"></mat-icon>
+              </button>
+      }
+      
+      <strong class="title">{{title}}</strong>
+      @if(title == 'HOME'){
+            <strong class="title" (click)="redirectTo('main/chat')">CHAT</strong>
+            <strong class="title"  (click)="redirectTo('encuesta')">ENCUESTA</strong>
+            <strong class="title"  (click)="redirectTo('estadisticas')">ESTADISTICAS</strong>
+            @if(isAdmin==true){
+                  <strong class="title"  (click)="redirectTo('ver-encuestas')">VER ENCUESTAS</strong>
+            }@else{
+
+            }
+            
+            <strong class="title" (click)="redirectTo('quien-soy')">Quién soy?</strong>
+      }
+   
+
+      @if(auth.currentUser){
+            <button (click)="signOut()" class="styled-button">Cerrar sesión</button>
+      }
+
+      <strong *ngFor="let route of routes" class="title" (click)="redirectTo(route.url)">{{ route.name }}</strong>
+
+</mat-toolbar>

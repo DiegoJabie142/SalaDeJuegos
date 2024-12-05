@@ -1,0 +1,33 @@
+<app-header [back]="true" [whereToBack]="'main/home'" [title]="'WORDLE'"></app-header>
+
+<div class="bg">
+    <div class="attempts">
+      <!-- Mostrar siempre las 6 filas, aunque estén vacías al principio -->
+      <div *ngFor="let row of emptyRows; let rowIndex = index" class="guess-row">
+        <div *ngFor="let letter of (guesses[rowIndex]?.split('') || emptyCells); let letterIndex = index" 
+             class="letter-box"
+             [ngClass]="getLetterClass(guesses[rowIndex])[letterIndex]">
+          {{ letter || '' | uppercase }}
+        </div>
+      </div>
+    </div>
+  
+    <div class="user-guess">
+      <input *ngIf='!gameOver' type="text" [(ngModel)]="userGuess" (keydown.enter)="checkGuess(userGuess)" maxlength="5" />
+      <button *ngIf='!gameOver' (click)="checkGuess(userGuess)">Adivinar</button>
+      <button *ngIf='gameOver' (click)="restartGame()">Reiniciar</button>
+
+    </div>
+
+    <app-keyboard [guessedLetters]="guessedLetters" (letterClicked)="onLetterClicked($event)"></app-keyboard>
+  
+    <div class="attempts-left" style="color: white;" *ngIf="!gameOver">
+      Intentos restantes: {{ attemptsLeft }}
+    </div>
+
+    <div class="attempts-left" style="color: white;" *ngIf="gameOver">
+      {{victoryMessage}}
+    </div>
+  </div>
+
+  
